@@ -15,8 +15,8 @@ class Bag:
         print(f'冒险币:{self.bi}')
 
     def write(self):
-        with open('bi.txt','w') as p:
+        with open('resources/bi.txt','w') as p:
             p.write(self.bi)
-        with open('inside.txt','w') as p:
+        with open('resources/inside.txt','w') as p:
             p.write(self.inside)
 
