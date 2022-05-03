@@ -21,6 +21,15 @@ for a in b[:]:
     if a == 'a':
         bag1.inside.remove(a)
         bag1.inside.append('生命药水')
+    if a == 'b':
+        bag1.inside.remove('b')
+        bag1.inside.append('力量药水')
+    if a == 'c':
+        bag1.inside.remove('c')
+        bag1.inside.append('体力丸')
+    if a == 'd':
+        bag1.inside.remove('d')
+        bag1.inside.append('炼金丸')
 #注册
 login()
 #背包
