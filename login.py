@@ -1,6 +1,5 @@
 def login():
     """初始化登录界面"""
-
     try:
         with open('resources/password.txt','r') as p:
             password = p.read()
