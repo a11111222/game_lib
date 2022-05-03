@@ -8,8 +8,15 @@ class Bag:
             print('你没有东西！')
         else:
             print('东西：')
-            a = 1
+            a = 0
             for big1 in self.inside:
                 a += 1
                 print(f'第{a}个:{big1}')
+        print(f'冒险币:{self.bi}')
+
+    def write(self):
+        with open('bi.txt','w') as p:
+            p.write(self.bi)
+        with open('inside.txt','w') as p:
+            p.write(self.inside)
 
