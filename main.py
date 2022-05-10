@@ -2,6 +2,7 @@ from time import sleep
 from bag import Bag
 from login import login
 import random
+
 # 初始化背包
 try:
     with open('resources/bi.txt', 'r') as p:
@@ -32,24 +33,30 @@ for a in b[:]:
     if a == 'd':
         bag1.inside.remove('d')
         bag1.inside.append('炼金丸')
+ship = '--------------------------------------'
 
-def view():
-    login()
-    print('欢迎!\n若想实现功能，请按旁边的对应按键，退出输入a')
-    while True:
-        print('游戏------------> 1')
-        print('更新日志---------> 2')
-        a = input()
-        if a == '1':
-            print('游戏初始化，请稍后')
-            while True:
-                sleep(random.randint(1,5))
+
+login()
+print('\n欢迎!')
+while a != 'b':
+    print('\n若想实现功能，请按旁边的对应按键，退出输入b')
+    print('游戏------------> 1')
+    print('更新日志---------> 2')
+    a = input()
+    if a == '1':
+        print('游戏初始化，请稍后')
+        sleep(random.randint(1, 5))
+        print('完成.')
+        while True:
+            print('若想实现功能，请按旁边的对应按键，退出输入a\n背包---------> 1')
+            a = input()
+            if a == '1':
+                bag1.view()
+                print(f'{ship}\n\n')
+            if a == 'a':
+                print(ship)
                 break
-            print('完成.')
-            print('--------------------------------------')
-        if a == '2':
-            print('1.0.0版本 ：更新背包系统\n1.0.1版本 ：更新注册界面\n当前版本 1.0.1')
-            print('--------------------------------------')
-        if a == 'a':
-            break
-view()
+
+    if a == '2':
+        print('1.0.0版本 ：更新背包系统\n1.0.1版本 ：更新注册界面\n当前版本 1.0.1')
+        print(ship)
