@@ -1,7 +1,9 @@
+import random
 from time import sleep
+
+import sign_in
 from bag import Bag
 from login import login
-import random
 
 # 初始化背包
 try:
@@ -49,6 +51,7 @@ while a != 'b':
         print('完成.')
         while True:
             print('若想实现功能，请按旁边的对应按键，退出输入a\n背包---------> 1')
+            print('签到---------> 2')
             a = input()
             if a == '1':
                 bag1.view()
@@ -56,7 +59,9 @@ while a != 'b':
             if a == 'a':
                 print(ship)
                 break
+            if a == '2':
+                sign_in.sign_in()
 
     if a == '2':
-        print('1.0.0版本 ：更新背包系统\n1.0.1版本 ：更新注册界面\n当前版本 1.0.1')
+        print('1.0.0版本 ：更新背包系统\n1.0.1版本 ：更新注册界面\n1.0.2版本：优化界面\n修复返回时退出程序的bug\n版本 1.0.1')
         print(ship)
