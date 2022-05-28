@@ -1,7 +1,6 @@
 import random
-from time import sleep
+from time import sleep, strftime
 
-import sign_in
 from bag import Bag
 from login import login
 
@@ -38,6 +37,25 @@ for a in b[:]:
 ship = '--------------------------------------'
 
 
+def sign_in():
+    """签到模块"""
+    with open('resources/sign_in.txt', 'r') as p:
+        a = int(p.read())
+    with open('resources/sign_in.txt', 'w') as p:
+        p.write(strftime('%d'))
+    with open('resources/sign_in.txt', 'r') as p:
+        b = int(p.read())
+    if a != b:
+        bag.bi = int(bag.bi)
+        bag.bi += 10000
+        bag.bi = str(bag.bi)
+        print('签到完成')
+        with open('resources/bi.txt', 'w') as p:
+            p.write(bag.bi)
+    else:
+        print('你已经签过到了，请明天再来')
+
+
 login()
 print('\n欢迎!')
 while a != 'b':
@@ -60,8 +78,14 @@ while a != 'b':
                 print(ship)
                 break
             if a == '2':
-                sign_in.sign_in()
+                sign_in()
+                print(ship)
 
     if a == '2':
-        print('1.0.0版本 ：更新背包系统\n1.0.1版本 ：更新注册界面\n1.0.2版本：优化界面\n修复返回时退出程序的bug\n版本 1.0.1')
+        print('1.0.0版本 ：更新背包系统'
+              '1.0.1版本 ：更新注册界面'
+              '1.0.2版本：优化界面'
+              '修复返回时退出程序的bug'
+              '1.0.3版本：新增签到'
+              '当前版本 1.0.3')
         print(ship)
