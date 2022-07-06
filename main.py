@@ -1,6 +1,8 @@
 import random
 from time import sleep, strftime
 
+from tqdm import tqdm
+
 from bag import Bag
 from login import login
 
@@ -65,8 +67,10 @@ while a != 'b':
     a = input()
     if a == '1':
         print('游戏初始化，请稍后')
-        sleep(random.randint(1, 5))
-        print('完成.')
+        max = random.randint(50, 200)
+        for i in tqdm(range(max)):
+            sleep(0.3)
+        print('\n完成.')
         while True:
             print('若想实现功能，请按旁边的对应按键，退出输入a\n背包---------> 1')
             print('签到---------> 2')
@@ -82,10 +86,10 @@ while a != 'b':
                 print(ship)
 
     if a == '2':
-        print('1.0.0版本 ：更新背包系统'
-              '1.0.1版本 ：更新注册界面'
-              '1.0.2版本：优化界面'
-              '修复返回时退出程序的bug'
-              '1.0.3版本：新增签到'
+        print('1.0.0版本 ：更新背包系统\n\n'
+              '1.0.1版本 ：更新注册界面\n\n'
+              '1.0.2版本：优化界面\n'
+              '修复返回时退出程序的bug\n\n'
+              '1.0.3版本：新增签到\n\n'
               '当前版本 1.0.3')
         print(ship)
