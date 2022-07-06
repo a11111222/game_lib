@@ -1,8 +1,6 @@
 import random
 from time import sleep, strftime
-
 from tqdm import tqdm
-
 from bag import Bag
 from login import login
 
