@@ -3,7 +3,6 @@ from time import sleep, strftime
 from tqdm import tqdm
 from bag import Bag
 from login import login
-
 # 初始化背包
 try:
     with open('resources/bi.txt', 'r') as p:
