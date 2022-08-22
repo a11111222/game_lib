@@ -3,7 +3,7 @@ from time import sleep, strftime
 from bag import Bag
 from login import login
 from tqdm import tqdm
-
+Error = '程序出错了,原因：\nNo suitable object found\n输入任意按键以继续'
 # 初始化背包
 try:
     with open('resources/bi.txt', 'r') as p:
@@ -54,8 +54,16 @@ def sign_in():
             p.write(bag.bi)
     else:
         print('你已经签过到了，请明天再来')
-
-
+        
+def activity():
+    p =random.randint(100,250)
+    for i in range(p):
+        sleep(0.1)
+        print(f'\r加载中,共{p}个/已完成%d个'%(i),end='')
+    print(f"\n\n\n{ship}")
+    print(Error)
+    input()
+    print(ship)
 login()
 print('\n欢迎!')
 while a != 'b':
@@ -72,6 +80,7 @@ while a != 'b':
         while True:
             print('若想实现功能，请按旁边的对应按键，退出输入a\n背包---------> 1')
             print('签到---------> 2')
+            print('活动---------> 3')
             a = input()
             if a == '1':
                 bag1.view()
@@ -82,6 +91,9 @@ while a != 'b':
             if a == '2':
                 sign_in()
                 print(ship)
+            if a =='3':
+                activity()
+                
 
     if a == '2':
         print('1.0.0版本 ：更新背包系统\n\n'
