@@ -12,7 +12,7 @@ def login():
             if password == password1 or username1 == username:
                 break
             else:
-                print('密或用户名错误，请再试一次')
+                print('密码或用户名错误，请再试一次')
                 continue
     except FileNotFoundError:
         print('注册：')

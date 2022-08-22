@@ -67,7 +67,7 @@ while a != 'b':
         print('游戏初始化，请稍后')
         max = random.randint(50, 200)
         for i in tqdm(range(max)):
-            sleep(0.3)
+            sleep(random.uniform(0.05,0.3))
         print('\n完成.')
         while True:
             print('若想实现功能，请按旁边的对应按键，退出输入a\n背包---------> 1')
