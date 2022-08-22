@@ -1,6 +1,5 @@
 __pycache__/
 .idea/
 启动.cmd
-bag.py
 resources/
-login.py
+.vscode/
